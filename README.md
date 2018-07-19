@@ -1,2 +1,4 @@
+![OpenUI5 logo](http://openui5.org/images/OpenUI5_new_big_side.png)
+
 # my-day-at-ui5con
-Demo application for UI5con Bangalore 2018
+> UI5Con experience app using the [UI5 Build and Development Tooling](https://github.com/SAP/ui5-tooling).

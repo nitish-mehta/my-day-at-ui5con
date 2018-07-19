@@ -1,0 +1,35 @@
+{
+	"sap.app": {
+		"id": "ui5con.experienceapp",
+		"type": "application"
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"rootView": {
+			"viewName": "ui5con.experienceapp.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ui5con.experienceapp.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/styles.css"
+				}
+			]
+		}
+	}
+}
