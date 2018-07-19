@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/test/Opa5"],function(t){"use strict";return t.extend("sap.ui.demo.todo.test.integration.pages.Common",{iStartTheApp:function(){this.iStartMyUIComponent({componentConfig:{name:"sap.ui.demo.todo",async:true}})},iTeardownTheApp:function(){this.iTeardownMyUIComponent()}})});

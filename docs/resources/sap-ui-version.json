@@ -1,0 +1,27 @@
+{
+	"name": "my-day-at-ui5con",
+	"version": "0.1.0",
+	"buildTimestamp": 1532033438126,
+	"scmRevision": "",
+	"gav": "",
+	"libraries": [
+		{
+			"name": "sap.ui.unified",
+			"version": "1.56.4",
+			"buildTimestamp": 1532033438126,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.core",
+			"version": "1.56.4",
+			"buildTimestamp": 1532033438126,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.m",
+			"version": "1.56.4",
+			"buildTimestamp": 1532033438126,
+			"scmRevision": ""
+		}
+	]
+}
