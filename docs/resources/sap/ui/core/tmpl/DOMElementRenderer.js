@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global"],function(e){"use strict";var t={};t.render=function(t,r){t.write("<");t.writeEscaped(r.getTag());t.writeControlData(r);r.getAttributes().forEach(function(r){var a=r.getName().toLowerCase();if(a==="class"){var i=r.getValue().split(" ");i.forEach(function(r){var r=r.trim();if(r){t.addClass(e.sap.encodeHTML(r))}})}else if(a==="style"){var s=r.getValue().split(";");s.forEach(function(r){var a=r.indexOf(":");if(a!=-1){var i=r.substring(0,a).trim();var s=r.substring(a+1).trim();t.addStyle(e.sap.encodeHTML(i),e.sap.encodeHTML(s))}})}else{t.writeAttributeEscaped(e.sap.encodeHTML(r.getName()),r.getValue())}});t.writeClasses();t.writeStyles();var a=r.getElements(),i=!!r.getText()||a.length>0;if(!i){t.write("/>")}else{t.write(">");if(r.getText()){t.writeEscaped(r.getText())}a.forEach(function(e,r){t.renderControl(r)});t.write("</");t.writeEscaped(r.getTag());t.write(">")}};return t},true);

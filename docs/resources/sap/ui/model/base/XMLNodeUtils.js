@@ -1,0 +1,6 @@
+/*
+ * ! UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/base/DataType","sap/ui/base/ManagedObject"],function(e,a,r){"use strict";return{parseScalarType:function(e,n,s,t){var i=r.bindingParser(n,t,true);if(i&&typeof i==="object"){return i}var o=n=i||n;var p=a.getType(e);if(p){if(p instanceof a&&!p.isValid(o)){o=p.parseValue(n)}}else{throw new Error("Property "+s+" has unknown type "+e)}return typeof o==="string"?r.bindingParser.escape(o):o},localName:function(e){return e.localName||e.baseName||e.nodeName},findControlClass:function(a,r){var n;var s=sap.ui.getCore().getLoadedLibraries();e.each(s,function(e,s){if(a===s.namespace||a===s.name){n=s.name+"."+(s.tagNames&&s.tagNames[r]||r)}});n=n||a+"."+r;e.sap.require(n);var t=e.sap.getObject(n);if(t){return t}else{e.sap.log.error("Can't find object class '"+n+"' for XML-view","","XMLTemplateProcessor.js")}}}});

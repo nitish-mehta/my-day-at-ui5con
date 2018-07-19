@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","./Matcher","./Visible"],function(e,t,r){"use strict";var a=new r;return t.extend("sap.ui.test.matchers.Interactable",{isMatching:function(t){if(!a.isMatching(t)){return false}if(t.getBusy&&t.getBusy()){this._oLogger.debug("Control '"+t+"' is busy");return false}if(t.getEnabled&&!t.getEnabled()){this._oLogger.debug("Control '"+t+"' is not enabled");return false}var r=t.getParent();while(r){if(r.getBusy&&r.getBusy()){this._oLogger.debug("Control '"+t+"' has a parent '"+r+"' that is busy");return false}if(r.getEnabled&&!r.getEnabled()){this._oLogger.debug("Control '"+t+"' has a parent '"+r+"' that is not enabled");return false}var n=r.getMetadata().getName()==="sap.ui.core.UIArea";if(n&&r.bNeedsRerendering){this._oLogger.debug("Control '"+t+"' is currently in a UIArea that needs a new rendering");return false}r=r.getParent()}var s=t.$().closest("#sap-ui-static").length;var i=e("#sap-ui-blocklayer-popup").is(":visible");if(!s&&i){this._oLogger.debug("The control '"+t+"' is hidden behind a blocking popup layer");return false}return true}})});

@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/thirdparty/jquery"],function(e){"use strict";function t(e,r){if(e.childElementCount!=r.childElementCount||e.tagName!=r.tagName){e.parentNode.replaceChild(r,e);return false}if(e.isEqualNode(r)){return true}var n=e.attributes;for(var i=0,a=n.length;i<a;i++){var u=n[i].name;if(r.getAttribute(u)===null){e.removeAttribute(u);a=a-1;i=i-1}}var l=r.attributes;for(var i=0,a=l.length;i<a;i++){var u=l[i].name,o=e.getAttribute(u),f=r.getAttribute(u);if(o===null||o!==f){e.setAttribute(u,f)}}var s=r.childNodes.length;if(!s&&!e.hasChildNodes()){return true}if(!r.childElementCount){if(!s){e.textContent=""}else if(s==1&&r.firstChild.nodeType==3){e.textContent=r.textContent}else{e.innerHTML=r.innerHTML}return true}for(var i=0,d=0,a=s;i<a;i++){var h=e.childNodes[i],c=r.childNodes[i-d];if(c.nodeType==1){if(!t(h,c)){d=d+1}}else{h.nodeValue=c.nodeValue}}return true}var r=function(r,n,i){var a;if(typeof n==="string"){a=e.parseHTML(n)[0]}else{a=n}if(i){e.cleanData([r]);e.cleanData(r.getElementsByTagName("*"))}return t(r,a)};return r});

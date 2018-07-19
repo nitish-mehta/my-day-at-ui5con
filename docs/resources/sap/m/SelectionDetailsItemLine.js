@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/core/Element"],function(e){"use strict";var t=e.extend("sap.m.SelectionDetailsItemLine",{metadata:{library:"sap.m",properties:{label:{type:"string",group:"Data"},value:{type:"any",group:"Data"},displayValue:{type:"string",defaultValue:null,group:"Data"},unit:{type:"string",defaultValue:null,group:"Data"},lineMarker:{type:"string",defaultValue:null,group:"Data"}}}});t.prototype._getValueToRender=function(){var e="",t=this.getValue();if(jQuery.type(t)==="string"){e=t}else if(jQuery.type(t)==="number"){e=t.toString()}else if(jQuery.isPlainObject(t)){if(t.day&&t.day.length>0){e=t.day}if(t.time&&t.time.length>0){e=e.length>0?t.time+" "+e:t.time}}else{jQuery.sap.log.warning("Value '"+t+"' is not supported. Expected type is a string, number or a plain object, including date and time properties of type string.")}return e};return t});

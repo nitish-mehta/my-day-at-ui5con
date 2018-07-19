@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["./DragInfo","./DropInfo"],function(e,r){"use strict";var t=r.extend("sap.ui.core.dnd.DragDropInfo",{metadata:{library:"sap.ui.core",interfaces:["sap.ui.core.dnd.IDragInfo","sap.ui.core.dnd.IDropInfo"],properties:{sourceAggregation:{type:"string",defaultValue:null}},associations:{targetElement:{type:"sap.ui.core.Element",multiple:false}},events:{dragStart:{allowPreventDefault:true},dragEnd:{}}}});t.prototype.isDraggable=e.prototype.isDraggable;t.prototype.fireDragEnd=e.prototype.fireDragEnd;t.prototype.fireDragStart=e.prototype.fireDragStart;t.prototype.getDropTarget=function(){var e=this.getTargetElement();if(e){return sap.ui.getCore().byId(e)}return this.getParent()};t.prototype.setGroupName=function(){jQuery.sap.log.error("groupName property must not be set on "+this);return this};return t},true);

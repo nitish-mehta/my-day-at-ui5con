@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/unified/library"],function(t,e){"use strict";var i=e.ContentSwitcherAnimation;var n={};n.render=function(e,n){var r=n.getId();var a=n.getAnimation();if(!sap.ui.getCore().getConfiguration().getAnimation()){a=i.None}var o=n.getActiveContent();e.write("<div");e.writeControlData(n);e.addClass("sapUiUfdCSwitcher");e.addClass("sapUiUfdCSwitcherAnimation"+t.sap.encodeHTML(a));e.writeClasses();e.write(">");e.write('<section id="'+r+'-content1" class="sapUiUfdCSwitcherContent sapUiUfdCSwitcherContent1'+(o==1?" sapUiUfdCSwitcherVisible":"")+'">');this.renderContent(e,n.getContent1());e.write("</section>");e.write('<section id="'+r+'-content2" class="sapUiUfdCSwitcherContent sapUiUfdCSwitcherContent2'+(o==2?" sapUiUfdCSwitcherVisible":"")+'">');this.renderContent(e,n.getContent2());e.write("</section>");e.write("</div>")};n.renderContent=function(t,e){for(var i=0;i<e.length;++i){t.renderControl(e[i])}};return n},true);

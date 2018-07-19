@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/support/library"],function(t,e){"use strict";var o=e.Categories,i=e.Severity,n=e.Audiences;var s={id:"onlyIconButtonNeedsTooltip",audiences:[n.Control],categories:[o.Usability],enabled:true,minversion:"1.28",title:"Button: Consists of only an icon, needs a tooltip",description:"A button without text needs a tooltip, so that the user knows what the button does",resolution:"Add a value to the tooltip property of the button",resolutionurls:[{text:"SAP Fiori Design Guidelines: Button",href:"https://experience.sap.com/fiori-design-web/button/#guidelines"}],check:function(t,e,o){o.getElementsByClassName("sap.m.Button").forEach(function(e){if(e.getProperty("icon")&&!e.getProperty("text")&&!e.getAggregation("tooltip")){var o=e.getId(),n=e.getMetadata().getElementName();t.addIssue({severity:i.Medium,details:"Button '"+n+"' ("+o+") consists of only an icon but has no tooltip",context:{id:o}})}})}};return[s]},true);

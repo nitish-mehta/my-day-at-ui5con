@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/core/library","./SearchProvider","jquery.sap.encoder"],function(e,r,s){"use strict";var a=s.extend("sap.ui.core.search.OpenSearchProvider",{metadata:{library:"sap.ui.core",properties:{suggestUrl:{type:"sap.ui.core.URI",group:"Misc",defaultValue:null},suggestType:{type:"string",group:"Misc",defaultValue:"json"}}}});a.prototype.suggest=function(r,s){var a=this.getSuggestUrl();if(!a){return}a=a.replace("{searchTerms}",e.sap.encodeURL(r));var t=this.getSuggestType();var u;if(t&&t.toLowerCase()==="xml"){t="xml";u=function(a){var t=e(a);var u=t.find("Text");var o=[];u.each(function(){o.push(e(this).text())});s(r,o)}}else{t="json";u=function(e){s(r,e[1])}}e.ajax({url:a,dataType:t,success:u,error:function(r,s,a){e.sap.log.fatal("The following problem occurred: "+s,r.responseText+","+r.status)}})};return a});

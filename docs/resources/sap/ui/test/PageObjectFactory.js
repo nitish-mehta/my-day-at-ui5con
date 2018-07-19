@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","./Opa","sap/ui/base/Object"],function(e,a,t){"use strict";var r=t.extend("sap.ui.test.PageObjectFactory");r.create=function(e,a){var t={};for(var r in e){if(!e.hasOwnProperty(r)){continue}var i=e[r].baseClass||a;var s=e[r].namespace||"sap.ui.test.opa.pageObject";var o=e[r].viewName||"";var c=e[r].actions;n(c,"actions",r,i,t,s,o);var p=e[r].assertions;n(p,"assertions",r,i,t,s,o)}return t};function n(e,a,t,r,n,c,p){if(e){var f=i(c,t,a);var u=s(e,f,r,p);o(u,a,t,n)}}function i(a,t,r){var n=a+"."+t+"."+r;var i=e.sap.getObject(n,NaN);if(i){e.sap.log.error("Opa5 Page Object namespace clash: You have loaded multiple page objects with the same name. To prevent overriding themself, specify the namespace parameter.")}return n}function s(a,t,r,n){var i=r.extend(t);for(var s in a){if(a.hasOwnProperty(s)){i.prototype[s]=a[s]}}var o=new i;if(n&&o.waitFor){var c=o.waitFor;o.waitFor=function(a){return c.call(this,e.extend(true,{viewName:n},a))}}return o}function o(e,t,r,n){if(t==="actions"){a.config.arrangements[r]=e;a.config.actions[r]=e}else if(t==="assertions"){a.config.assertions[r]=e}n[r]=n[r]||{};n[r][t]=e}return r});

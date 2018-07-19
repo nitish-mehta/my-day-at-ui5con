@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/base/DataType","./Type","./FormatException","./ParseException","./ValidateException"],function(t,e){"use strict";var n={format:function(t){return t},parse:function(t){return t}};var o=e.extend("sap.ui.model.SimpleType",{constructor:function(t,n){e.apply(this,arguments);this.setFormatOptions(t||{});this.setConstraints(n||{});this.sName="SimpleType"},metadata:{abstract:true,publicMethods:["setConstraints","setFormatOptions","formatValue","parseValue","validateValue"]}});o.prototype.getModelFormat=function(){return n};o.prototype.setConstraints=function(t){this.oConstraints=t};o.prototype.setFormatOptions=function(t){this.oFormatOptions=t};o.prototype.getPrimitiveType=function(e){switch(e){case"any":case"boolean":case"int":case"float":case"string":case"object":return e;default:var n=t.getType(e);return n&&n.getPrimitiveType().getName()}};o.prototype.combineMessages=function(t){if(t.length===1){return t[0]}else{return t.join(". ")+"."}};return o});

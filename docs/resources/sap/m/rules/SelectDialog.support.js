@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/support/library"],function(e,t){"use strict";var i=t.Categories,a=t.Severity,n=t.Audiences;var o={id:"noContainInactiveItemsInSelectDialog",audiences:[n.Control],categories:[i.Usability],enabled:true,minversion:"1.28",title:"SelectDialog: Select Dialog should not contain inactive items",description:"All items in a Select Dialog should be interactable/selectable",resolution:"Make all items interactable/selectable or remove the inactive ones",resolutionurls:[{text:"SAP Fiori Design Guidelines: SelectDialog",href:"https://experience.sap.com/fiori-design-web/select-dialog/#behavior-and-interaction"}],check:function(e,t,i){i.getElementsByClassName("sap.m.SelectDialog").forEach(function(t){var i=t.getItems(),n="";i.forEach(function(e){if(e.getType()===sap.m.ListType.Inactive){var t=e.getId(),i=e.getMetadata().getElementName();n+=i+" ("+t+"); "}});if(n){var o=t.getId(),l=t.getMetadata().getElementName();e.addIssue({severity:a.Medium,details:"SelectDialog '"+l+"' ("+o+") contains one or more items of type 'Inactive' : "+n,context:{id:o}})}})}};return[o]},true);

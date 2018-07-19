@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/core/library"],function(t){"use strict";var e=t.TextAlign;var i=t.TitleLevel;var a={};a.render=function(t,a){var r=a._getTitle(),l=(r?r.getLevel():a.getLevel())||i.Auto,s=l==i.Auto,d=s?"div":l;t.write("<",d);t.writeControlData(a);t.addClass("sapMTitle");t.addClass("sapMTitleStyle"+(a.getTitleStyle()||i.Auto));t.addClass(a.getWrapping()?"sapMTitleWrap":"sapMTitleNoWrap");t.addClass("sapUiSelectable");var n=a.getWidth();if(!n){t.addClass("sapMTitleMaxWidth")}else{t.addStyle("width",n)}var p=a.getTextAlign();if(p&&p!=e.Initial){t.addClass("sapMTitleAlign"+p)}if(a.getParent()instanceof sap.m.Toolbar){t.addClass("sapMTitleTB")}var g=r?r.getTooltip_AsString():a.getTooltip_AsString();if(g){t.writeAttributeEscaped("title",g)}if(s){t.writeAttribute("role","heading")}t.writeClasses();t.writeStyles();t.write("><span");t.writeAttribute("id",a.getId()+"-inner");t.write(">");t.writeEscaped(r?r.getText():a.getText());t.write("</span></",d,">")};return a},true);

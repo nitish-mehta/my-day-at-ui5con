@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["./BarInPageEnabler"],function(e){"use strict";var t={};t.hasNewFlexBoxSupport=function(){var e=document.documentElement.style;return e.flex!==undefined||e.webkitFlexShrink!==undefined}();t.render=e.prototype.render;t.decorateRootElement=function(e,a){e.addClass("sapMTB");e.writeAccessibilityState(a,{role:a._getAccessibilityRole()});if(!t.hasNewFlexBoxSupport){e.addClass("sapMTBOldFlex")}else{e.addClass("sapMTBNewFlex")}if(a.getActive()){e.addClass("sapMTBActive");e.writeAttribute("tabindex","0")}else{e.addClass("sapMTBInactive")}e.addClass("sapMTB"+a.getStyle());e.addClass("sapMTB-"+a.getActiveDesign()+"-CTX");var d=a.getWidth();var n=a.getHeight();d&&e.addStyle("width",d);n&&e.addStyle("height",n)};t.renderBarContent=function(t,a){a.getContent().forEach(function(d){e.addChildClassTo(d,a);t.renderControl(d)})};t.shouldAddIBarContext=function(e){return false};return t},true);

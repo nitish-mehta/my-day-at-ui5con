@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/model/Model","./ControlPropertyBinding"],function(t,e,n){"use strict";var o=e.extend("sap.ui.model.control.ControlModel",{constructor:function(t){e.apply(this,arguments);this.oControl=t;this.oControl.attachEvent("_change",this.checkUpdate,this);this.oElements=[]}});o.prototype.destroy=function(){this.oControl.detachEvent("_change",this.checkUpdate,this)};o.prototype.addFacadeComponent=function(e){var n=t.inArray(e,this.oElements);if(n<0){this.oElements.push(e);e.attachEvent("_change",this.checkUpdate,this)}};o.prototype.removeFacadeComponent=function(e){var n=t.inArray(e,this.oElements);if(n>=0){this.oElements.splice(n,1);e.detachEvent("_change",this.checkUpdate,this)}};o.prototype.bindProperty=function(t,e){e=e||this.oControl;if(e!==this.oControl){this.addFacadeComponent(e)}return new n(this,t,e)};o.prototype.checkUpdate=function(e){if(this._onchange){this._onchange(e)}if(this.aBindings.length){var n=this.aBindings.slice(0);t.each(n,function(t,e){e.checkUpdate()})}};return o});

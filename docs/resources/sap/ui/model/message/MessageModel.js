@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/model/BindingMode","sap/ui/model/ClientModel","sap/ui/model/Context","./MessageListBinding","./MessagePropertyBinding"],function(e,t,n,i,o,s){"use strict";var r=n.extend("sap.ui.model.message.MessageModel",{constructor:function(e){n.apply(this,arguments);this.sDefaultBindingMode=t.OneWay;this.mSupportedBindingModes={OneWay:true,TwoWay:false,OneTime:false};this.oMessageManager=e}});r.prototype.setData=function(e){this.oData=e;this.checkUpdate()};r.prototype.fireMessageChange=function(e){this.fireEvent("messageChange",e);return this};r.prototype.bindProperty=function(e,t,n){var i=new s(this,e,t,n);return i};r.prototype.bindList=function(e,t,n,i,s){var r=new o(this,e,t,n,i,s);return r};r.prototype.setProperty=function(t,n,i){e.sap.log.error(this+"not implemented: Only 'OneWay' binding mode supported")};r.prototype.getProperty=function(e,t){return this._getObject(e,t)};r.prototype._getObject=function(e,t){var n;if(t instanceof i){n=this._getObject(t.getPath())}else if(t){n=t}if(!e){return n}var o=e.split("/"),s=0;if(!o[0]){n=this.oData;s++}while(n&&o[s]){n=n[o[s]];s++}return n};return r});

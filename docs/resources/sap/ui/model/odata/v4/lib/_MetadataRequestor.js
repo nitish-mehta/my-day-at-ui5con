@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","./_Helper","./_V2MetadataConverter","./_V4MetadataConverter"],function(e,t,r,a){"use strict";return{create:function(n,o,i){var s={},d=t.buildQuery(i);return{read:function(i,u,f){var c;function l(t){var n=o==="4.0"||u?a:r,s=t.$XML;delete t.$XML;return e.extend((new n).convertXMLMetadata(s,i),t)}if(i in s){if(f){throw new Error("Must not prefetch twice: "+i)}c=s[i].then(l);delete s[i]}else{c=new Promise(function(r,a){e.ajax(u?i:i+d,{method:"GET",headers:n}).then(function(e,t,a){var n=a.getResponseHeader("Date"),o=a.getResponseHeader("ETag"),i={$XML:e},s=a.getResponseHeader("Last-Modified");if(n){i.$Date=n}if(o){i.$ETag=o}if(s){i.$LastModified=s}r(i)},function(r,n,o){var s=t.createError(r);e.sap.log.error("GET "+i,s.message,"sap.ui.model.odata.v4.lib._MetadataRequestor");a(s)})});if(f){s[i]=c}else{c=c.then(l)}}return c}}}}},false);

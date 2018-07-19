@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/test/_OpaLogger","./Action"],function(t,e,r){"use strict";var i=e.getLogger("sap.ui.test.actions.EnterText");return r.extend("sap.ui.test.actions.EnterText",{metadata:{properties:{text:{type:"string"},clearTextFirst:{type:"boolean",defaultValue:true}},publicMethods:["executeOn"]},executeOn:function(e){var r=this.$(e),s=r[0];if(!s){return}if(this.getText()===undefined||!this.getClearTextFirst()&&!this.getText()){t.sap.log.error("Please provide a text for this EnterText action",this._sLogPrefix);return}var a=this.getUtils();i.timestamp("opa.actions.enterText");i.debug("Enter text in control "+e);this._tryOrSimulateFocusin(r,e);if(this.getClearTextFirst()){a.triggerKeydown(s,t.sap.KeyCodes.DELETE);a.triggerKeyup(s,t.sap.KeyCodes.DELETE);r.val("");a.triggerEvent("input",s)}this.getText().split("").forEach(function(t){a.triggerCharacterInput(s,t);a.triggerEvent("input",s)});this._simulateFocusout(s);a.triggerEvent("search",s)}})});

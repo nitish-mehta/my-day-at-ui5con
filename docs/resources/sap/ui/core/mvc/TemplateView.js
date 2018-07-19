@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/core/library","./View","./TemplateViewRenderer"],function(e,t,i,r){"use strict";var a=t.mvc.ViewType;var n=i.extend("sap.ui.core.mvc.TemplateView",{metadata:{library:"sap.ui.core"}});(function(){sap.ui.templateview=function(t,i){e.sap.log.warning("sap.ui.core.mvc.TemplateView is deprecated. Use XMLView or JSView instead.");return sap.ui.view(t,i,a.Template)};n._sType=a.Template;n.prototype.getControllerName=function(){return this._sControllerName};n._getViewUrl=function(t){return e.sap.getModulePath(t,".view.tmpl")};n.prototype.initViewSettings=function(e){if(!e){throw new Error("mSettings must be given")}if(!e.viewName){throw new Error("No view name is given.")}this._oTemplate=sap.ui.template({id:this.getId(),src:n._getViewUrl(e.viewName)});this._sControllerName=this._oTemplate._sControllerName;this._oTemplate=this._oTemplate.createControl(undefined,undefined,this);this.addContent(this._oTemplate)}})();return n});

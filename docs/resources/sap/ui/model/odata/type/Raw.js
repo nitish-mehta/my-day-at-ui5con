@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/model/FormatException","sap/ui/model/odata/type/ODataType","sap/ui/model/ParseException","sap/ui/model/ValidateException"],function(t,e,o,a){"use strict";var p=e.extend("sap.ui.model.odata.type.Raw",{constructor:function(t,o){e.apply(this,arguments);if(t!==undefined||o!==undefined||arguments.length>2){throw new Error("Unsupported arguments")}}});p.prototype.formatValue=function(e,o){if(o==="any"){return e}throw new t("Type 'sap.ui.model.odata.type.Raw' does not support formatting")};p.prototype.getName=function(){return"sap.ui.model.odata.type.Raw"};p.prototype.parseValue=function(){throw new o("Type 'sap.ui.model.odata.type.Raw' does not support parsing")};p.prototype.validateValue=function(){throw new a("Type 'sap.ui.model.odata.type.Raw' does not support validating")};return p});

@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/base/util/uid","sap/base/util/hashCode","sap/base/util/unique","sap/base/util/equal","sap/base/util/each","sap/base/util/arraySymbolDiff","sap/base/util/JSTokenizer","sap/base/util/extend","sap/base/util/UriParameters","sap/base/util/arrayDiff"],function(a,e,s,t,r,i,n,l,u,p,f){"use strict";a.sap.uid=e;a.sap.hashCode=s;a.sap.unique=t;a.sap.equal=r;a.sap.each=i;a.sap.arraySymbolDiff=n;a.sap._createJSTokenizer=l;a.sap.parseJS=l().parseJS;a.sap.extend=u;a.sap.getUriParameters=function a(e){e=e?e:window.location.href;return new p(e)};a.sap.delayedCall=function e(s,t,r,i){return setTimeout(function(){if(a.type(r)=="string"){r=t[r]}r.apply(t,i||[])},s)};a.sap.clearDelayedCall=function a(e){clearTimeout(e);return this};a.sap.intervalCall=function e(s,t,r,i){return setInterval(function(){if(a.type(r)=="string"){r=t[r]}r.apply(t,i||[])},s)};a.sap.clearIntervalCall=function a(e){clearInterval(e);return this};a.sap.forIn=i;a.sap.arrayDiff=f;return a});

@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/base/Object"],function(t){"use strict";var e=t.extend("sap.ui.model.Context",{constructor:function(e,r){t.apply(this);this.oModel=e;this.sPath=r;this.bForceRefresh=false},metadata:{abstract:true,publicMethods:["getModel","getPath","getProperty","getObject"]}});e.prototype.getModel=function(){return this.oModel};e.prototype.getPath=function(t){return this.sPath+(t?"/"+t:"")};e.prototype.getProperty=function(t){return this.oModel.getProperty(t,this)};e.prototype.getObject=function(t,e){if(jQuery.isPlainObject(t)){e=t;t=undefined}return this.oModel.getObject(t,this,e)};e.prototype.setForceRefresh=function(t){this.bForceRefresh=t};e.prototype.isRefreshForced=function(){return this.bForceRefresh};e.prototype.setPreliminary=function(t){this.bPreliminary=t};e.prototype.isPreliminary=function(){return this.bPreliminary};e.prototype.setUpdated=function(t){this.bUpdated=t};e.prototype.isUpdated=function(){return this.bUpdated};e.hasChanged=function(t,e){var r=false;if(t!==e){r=true}else if(e&&e.isUpdated()){r=true}else if(e&&e.isRefreshForced()){r=true}return r};e.prototype.toString=function(){return this.sPath};return e});

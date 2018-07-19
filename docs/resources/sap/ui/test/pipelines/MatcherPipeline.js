@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/test/_OpaLogger","sap/ui/base/Object","./PipelineFactory"],function(e,r,t,i){"use strict";var n=new i({name:"Matcher",functionName:"isMatching"}),s=r.getLogger("sap.ui.test.pipelines.MatcherPipeline");function a(e,r){var t=r;var i=e.every(function(e){var t;if(r){t=e.isMatching(r)}else{t=e.isMatching()}if(t){if(t!==true){r=t}return true}return false});if(i){return t===r?true:r}return false}return t.extend("sap.ui.test.pipelines.MatcherPipeline",{process:function(r){var t,i,u=r.control;var o=n.create(r.matchers);var l;if(!o||!o.length){s.debug("No matchers defined. All controls are returned");return u}if(!e.isArray(u)){l=1;i=[u]}else{i=u}var c=[];i.forEach(function(e){var r=a(o,e);if(r){if(r===true){c.push(e)}else{s.debug("Pipeline input control '"+"' was transformed to '"+r+"'");c.push(r)}}},this);s.debug(!!i.length?c.length+" out of "+i.length+" controls met the matchers pipeline requirements":"No controls found so matcher pipeline processing was skipped");if(!c.length){return false}if(l===1){t=c[0]}else{t=c}return t}})});

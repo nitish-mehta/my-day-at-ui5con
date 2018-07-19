@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","./Object"],function(t,e){"use strict";var r=e.extend("sap.ui.base.Event",{constructor:function(t,r,s){e.apply(this);if(arguments.length>0){this.init(t,r,s)}}});r.prototype.init=function(e,r,s){t.sap.assert(typeof e==="string","Event.init: sId must be a string");t.sap.assert(sap.ui.require("sap/ui/base/EventProvider")&&r instanceof sap.ui.require("sap/ui/base/EventProvider"),"Event.init: oSource must be an EventProvider");this.sId=e;this.oSource=r;this.mParameters=s||{};this.bCancelBubble=false;this.bPreventDefault=false};r.prototype.reset=function(){this.sId="";this.oSource=null;this.mParameters=null;this.bCancelBubble=false;this.bPreventDefault=false};r.prototype.getId=function(){return this.sId};r.prototype.getSource=function(){return this.oSource};r.prototype.getParameters=function(){return this.mParameters};r.prototype.getParameter=function(e){t.sap.assert(typeof e==="string"&&e,"Event.getParameter: sName must be a non-empty string");return this.mParameters[e]};r.prototype.cancelBubble=function(){this.bCancelBubble=true};r.prototype.preventDefault=function(){this.bPreventDefault=true};return r});

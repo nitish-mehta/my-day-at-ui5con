@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define([],function(){"use strict";var r={};r.load=function(n){n=n||{};n.async=true;return r._load(n)};var n=null;r._load=function(r){if(typeof r!=="object"){r={library:r}}r.async=r.async===true;r.failOnError=r.failOnError!==false;if(!sap.ui.versioninfo){if(r.async&&n instanceof Promise){return n.then(function(){return sap.ui.getVersionInfo(r)})}var e=function(e){n=null;if(e===null){return undefined}sap.ui.versioninfo=e;return sap.ui.getVersionInfo(r)};var i=function(r){n=null;throw r};var a=jQuery.sap.loadResource("sap-ui-version.json",{async:r.async,failOnError:r.async||r.failOnError});if(a instanceof Promise){n=a;return a.then(e,i)}else{return e(a)}}else{var o;if(typeof r.library!=="undefined"){var s=sap.ui.versioninfo.libraries;if(s){for(var u=0,f=s.length;u<f;u++){if(s[u].name===r.library){o=s[u];break}}}}else{o=sap.ui.versioninfo}return r.async?Promise.resolve(o):o}};return r});

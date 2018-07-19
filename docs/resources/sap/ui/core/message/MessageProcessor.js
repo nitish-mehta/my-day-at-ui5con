@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/base/EventProvider"],function(e,s){"use strict";var t=s.extend("sap.ui.core.message.MessageProcessor",{constructor:function(){s.apply(this,arguments);this.mMessages=null;this.id=e.sap.uid();sap.ui.getCore().getMessageManager().registerMessageProcessor(this)},metadata:{abstract:true,publicMethods:["getId","setMessages","attachMessageChange","detachMessageChange"]}});t.M_EVENTS={messageChange:"messageChange"};t.prototype.attachMessageChange=function(e,s,t){this.attachEvent("messageChange",e,s,t);return this};t.prototype.detachMessageChange=function(e,s){this.detachEvent("messageChange",e,s);return this};t.prototype.fireMessageChange=function(e){this.fireEvent("messageChange",e);return this};t.prototype.getId=function(){return this.id};t.prototype.destroy=function(){sap.ui.getCore().getMessageManager().unregisterMessageProcessor(this);s.prototype.destroy.apply(this,arguments)};return t});

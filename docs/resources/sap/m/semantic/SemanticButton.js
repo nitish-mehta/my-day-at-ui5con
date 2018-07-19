@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/m/semantic/SemanticControl","sap/m/Button","sap/m/semantic/SemanticOverflowToolbarButton"],function(t,e,n){"use strict";var i=t.extend("sap.m.semantic.SemanticButton",{metadata:{library:"sap.m",abstract:true,properties:{enabled:{type:"boolean",group:"Behavior",defaultValue:true}},events:{press:{}}}});i.prototype._getControl=function(){var t=this.getAggregation("_control");if(!t){var i=this._getConfiguration()&&this._getConfiguration().constraints==="IconOnly"?n:e;var o=this._createInstance(i);o.applySettings(this._getConfiguration().getSettings());if(typeof this._getConfiguration().getEventDelegates==="function"){o.addEventDelegate(this._getConfiguration().getEventDelegates(o))}this.setAggregation("_control",o,true);t=this.getAggregation("_control")}return t};i.prototype._createInstance=function(t){return new t({id:this.getId()+"-button",press:jQuery.proxy(this.firePress,this)})};return i});

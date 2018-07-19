@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/base/Log"],function(e){"use strict";function t(t,o,a){return function(n){try{if(n!=null||o==="string"){if(n){localStorage.setItem(t,o==="boolean"?"X":n)}else{localStorage.removeItem(t)}a(n)}n=localStorage.getItem(t);return o==="boolean"?n==="X":n}catch(o){e.warning("Could not access localStorage while accessing '"+t+"' (value: '"+n+"', are cookies disabled?): "+o.message)}}}return{debug:t("sap-ui-debug","",function e(t){alert("Usage of debug sources is "+(t?"on":"off")+" now.\nFor the change to take effect, you need to reload the page.")}),setReboot:t("sap-ui-reboot-URL","string",function e(t){if(t){alert("Next time this app is launched (only once), it will load UI5 from:\n"+t+".\nPlease reload the application page now.")}}),statistics:t("sap-ui-statistics","boolean",function e(t){alert("Usage of Gateway statistics "+(t?"on":"off")+" now.\nFor the change to take effect, you need to reload the page.")})}});

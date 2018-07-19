@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/base/util/getObject","sap/base/Log"],function(e,t){"use strict";var r="XHRInterceptor";var n=Object.create(null);var i=Object.create(null);var u=Object.create(null);function s(e,t){i[e]=[];u[e]=window.XMLHttpRequest.prototype[e];window.XMLHttpRequest.prototype[e]=function(){var t=arguments;u[e].apply(this,t);i[e].forEach(function(e){e.apply(this,t)}.bind(this))}}function c(t,r,u){var s=e(n,t,true)[r];if(s){var c=i[r].indexOf(s);i[r][c]=u}else{e(n,t,true)[r]=u;i[r].push(u)}}return{register:function(e,n,u){t.debug("Register '"+e+"' for XHR function '"+n+"'",r);if(!i[n]){s(n,u)}c(e,n,u)},unregister:function(e,u){var s=this.isRegistered(e,u);if(s){i[u]=i[u].filter(function(t){return t!==n[e][u]});delete n[e][u];if(Object.keys(n[e]).length===0){delete n[e]}}t.debug("Unregister '"+e+"' for XHR function '"+u+(s?"'":"' failed"),r);return s},isRegistered:function(e,t){return n[e]&&n[e][t]}}});

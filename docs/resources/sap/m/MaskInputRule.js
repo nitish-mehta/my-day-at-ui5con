@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/core/Element"],function(t,e){"use strict";var r=e.extend("sap.m.MaskInputRule",{metadata:{library:"sap.m",properties:{maskFormatSymbol:{type:"string",group:"Misc",defaultValue:"*"},regex:{type:"string",group:"Misc",defaultValue:"[a-zA-Z0-9]"}}}});r.prototype.setMaskFormatSymbol=function(t){var e=s.call(this,t);if(e){this.setProperty("maskFormatSymbol",t)}return this};r.prototype.setRegex=function(t){var e=a.call(this,t);if(e){this.setProperty("regex",t)}return this};r.prototype.toString=function(){return this.getMaskFormatSymbol()+":"+this.getRegex()};function s(e){if(/^.$/i.test(e)){return true}t.sap.log.error("The mask format symbol '"+e+"' is not valid");return false}function a(e){if(/.+/i.test(e)){return true}t.sap.log.error("The regex value '"+e+"' is not valid");return false}return r});

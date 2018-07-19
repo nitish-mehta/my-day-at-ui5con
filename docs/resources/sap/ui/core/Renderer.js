@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global"],function(e){"use strict";var t={};var r;function a(t){return function(r,n){e.sap.assert(typeof r==="string"&&r,"Renderer.extend must be called with a non-empty name for the new renderer");e.sap.assert(n==null||typeof n==="object","oRendererInfo must be an object or can be omitted");var i=Object.create(t);i.extend=a(i);if(n){e.extend(i,n)}e.sap.setObject(r,i);return i}}var n=a(t);t.extend=function(e,t){if(typeof e==="string"){return n(e,t)}else{var r=Object.create(e||null);r._super=e;r.extend=a(r);return r}};t.getTextAlign=function(e,t){if(!r){r=sap.ui.requireSync("sap/ui/core/library")}var a=r.TextAlign;var n=r.TextDirection;var i="",s=sap.ui.getCore().getConfiguration().getRTL();switch(e){case a.End:switch(t){case n.LTR:i="right";break;case n.RTL:i="left";break;default:i=s?"left":"right";break}break;case a.Begin:switch(t){case n.LTR:i="left";break;case n.RTL:i="right";break;default:i=s?"right":"left";break}break;case a.Right:if(!s||t==n.LTR){i="right"}break;case a.Center:i="center";break;case a.Left:if(s||t==n.RTL){i="left"}break}return i};return t},true);

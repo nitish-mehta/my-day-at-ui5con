@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/base/SyncPromise"],function(o){"use strict";function r(o,r){this.sGroupId=o;this.bLocked=r;this.mPromiseForGroup={};this.mResolveFunctionForGroup={}}r.prototype.getGroupId=function(){return this.sGroupId};r.prototype.getUnlockedCopy=function(){return new r(this.sGroupId)};r.prototype.isLocked=function(){return this.bLocked};r.prototype.setGroupId=function(o){if(!this.sGroupId){this.sGroupId=o;for(o in this.mResolveFunctionForGroup){if(this.sGroupId!==o){this.mResolveFunctionForGroup[o]();delete this.mPromiseForGroup[o];delete this.mResolveFunctionForGroup[o]}}}};r.prototype.unlock=function(o){var r;if(!this.mPromiseForGroup&&!o){throw new Error("GroupLock unlocked twice")}this.mPromiseForGroup=null;this.bLocked=false;for(r in this.mResolveFunctionForGroup){this.mResolveFunctionForGroup[r]()}this.mResolveFunctionForGroup=null};r.prototype.waitFor=function(r){var t=this;if(this.bLocked&&(!this.sGroupId||this.sGroupId===r)){if(!t.mPromiseForGroup[r]){t.mPromiseForGroup[r]=new o(function(o){t.mResolveFunctionForGroup[r]=o})}return t.mPromiseForGroup[r]}};r.$cached=new r("$cached");r.$cached.unlock=function(){};return r},false);

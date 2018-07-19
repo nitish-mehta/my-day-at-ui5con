@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","./Element","./library"],function(e,t,r){"use strict";var n=r.ValueState;var a={};var u=null;var i=function(){if(!u){u={};var e=sap.ui.getCore().getLibraryResourceBundle("sap.ui.core");u[n.Error]=e.getText("VALUE_STATE_ERROR");u[n.Warning]=e.getText("VALUE_STATE_WARNING");u[n.Success]=e.getText("VALUE_STATE_SUCCESS")}};a.enrichTooltip=function(r,n){e.sap.assert(r instanceof t,"oElement must be an Element");if(!n&&r.getTooltip()){return undefined}var u=a.getAdditionalText(r);if(u){return(n?n+" - ":"")+u}return n};a.getAdditionalText=function(e){var t=null;if(e&&e.getValueState){t=e.getValueState()}else if(n[e]){t=e}if(t&&t!=n.None){i();return u[t]}return null};a.formatValueState=function(e){switch(e){case 1:return n.Warning;case 2:return n.Success;case 3:return n.Error;default:return n.None}};return a},true);

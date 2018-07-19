@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/support/library"],function(e){"use strict";var t=e.Categories,s=e.Severity,i=e.Audiences;var r={id:"densityAwareImage",audiences:[i.Control],categories:[t.Usability],enabled:true,minversion:"1.28",title:"Image: Density awareness enabled",description:"One or more requests will be sent trying to get the density perfect version of the image. These extra requests will impact performance, if the corresponding density versions of the image do not exist on the server",resolution:"Either ensure the corresponding density versions of the image exist on the backend server or disable density awareness",resolutionurls:[{text:"API Refrence for sap.m.Image",href:"https://sapui5.hana.ondemand.com/#/api/sap.m.Image"}],check:function(e,t,i){i.getElementsByClassName("sap.m.Image").forEach(function(t){if(t.getDensityAware()){var i=t.getId(),r=t.getMetadata().getElementName();e.addIssue({severity:s.Low,details:"Image '"+r+"' ("+i+") is density aware",context:{id:i}})}})}};return[r]},true);

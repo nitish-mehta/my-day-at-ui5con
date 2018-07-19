@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/core/Renderer"],function(t,e){"use strict";var i={};i.CSS_CLASS="sapMSliderTooltip";i.render=function(t,e){t.write("<div");t.writeControlData(e);t.addClass(i.CSS_CLASS);t.writeClasses();if(e.getWidth()){t.addStyle("width",e.getWidth())}t.writeStyles();t.write(">");this.renderTooltipElement(t,e);t.write("</div>")};i.renderTooltipElement=function(t,e){var r=sap.ui.getCore().getConfiguration().getAccessibility();t.write("<input ");t.addClass(i.CSS_CLASS+"Input");if(!e.getEditable()){t.addClass(i.CSS_CLASS+"NonEditable")}if(r){t.writeAccessibilityState(e,{})}t.writeClasses();t.writeAttribute("tabindex","-1");t.writeAttributeEscaped("value",e.getValue());t.writeAttributeEscaped("type","number");t.writeAttributeEscaped("step",e.getStep());t.writeAttributeEscaped("id",e.getId()+"-input");t.write("/>")};return i},true);

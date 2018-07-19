@@ -1,0 +1,6 @@
+/*
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/base/ManagedObject"],function(e,t){"use strict";var a=t.extend("sap.m.TablePersoProvider",{constructor:function(e,a){t.apply(this,arguments)},metadata:{abstract:true,library:"sap.m"}});a.prototype.init=function(){e.sap.log.warning("This is the abstract base class for a TablePersoProvider. Do not create instances of this class, but use a concrete sub class instead.");e.sap.log.debug("TablePersoProvider init")};a.prototype.getPersData=function(){e.sap.log.debug("TablePersoProvider getPersData")};a.prototype.setPersData=function(t){e.sap.log.debug("TablePersoProvider setPersData")};a.prototype.delPersData=function(){e.sap.log.debug("TablePersoProvider delPersData")};a.prototype.getCaption=function(e){return null};a.prototype.getGroup=function(e){return null};a.prototype.resetPersData=function(){e.sap.log.debug("TablePersoProvider resetPersData")};return a});

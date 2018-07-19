@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/model/FormatException","sap/ui/model/odata/type/ODataType","sap/ui/model/ParseException","sap/ui/model/ValidateException"],function(e,t,a,o){"use strict";function n(e,t){var a;e.oConstraints=undefined;if(t){a=t.nullable;if(a===false){e.oConstraints={nullable:false}}else if(a!==undefined&&a!==true){jQuery.sap.log.warning("Illegal nullable: "+a,null,e.getName())}}}var i=t.extend("sap.ui.model.odata.type.Stream",{constructor:function(e,a){t.apply(this,arguments);if(e!==undefined){throw new Error("Unsupported arguments")}n(this,a)}});i.prototype.formatValue=function(t,a){switch(this.getPrimitiveType(a)){case"any":case"string":return t;default:throw new e("Don't know how to format "+this.getName()+" to "+a)}};i.prototype.getName=function(){return"sap.ui.model.odata.type.Stream"};i.prototype.parseValue=function(){throw new a("Type 'sap.ui.model.odata.type.Stream' does not support parsing")};i.prototype.validateValue=function(){throw new o("Type 'sap.ui.model.odata.type.Stream' does not support validating")};return i});
