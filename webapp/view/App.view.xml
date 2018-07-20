@@ -10,7 +10,7 @@
 						<items>
 							<IconTabFilter
 								icon="sap-icon://picture">
-								<space:Intro title="Insert Something Awesome Here" text="Ummm ............ Like some photos, maybe ?"/>
+								<space:Intro visible="false" title="Insert Something Awesome Here" text="Ummm ............ Like some photos, maybe ?"/>
 
 								<lightbox:LightBox images="{viewModel>/images}" width="100%" height="200px">
 									

@@ -7,36 +7,49 @@ sap.ui.define(['sap/ui/core/mvc/Controller'], function(Controller) {
 			var oViewModel = new sap.ui.model.json.JSONModel({
 				images: [
 					{
-						src: 'https://www.w3schools.com/howto/img_nature_wide.jpg',
-						description: 'Nature'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic1.JPG?raw=true',
+						description: 'UI5Con'
 					},
 					{
-						src: 'https://www.w3schools.com/howto/img_snow_wide.jpg',
-						description: 'Snow'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic2.JPG?raw=true',
+						description: 'UI5Con'
 					},
 					{
-						src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
-						description: 'Mountains'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic3.JPG?raw=true',
+						description: 'UI5Con'
 					},
 					{
-						src: 'https://www.w3schools.com/howto/img_lights_wide.jpg',
-						description: 'Lights'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic1.JPG?raw=true',
+						description: 'UI5Con'
 					},
 					{
-						src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
-						description: 'Mountains'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic2.JPG?raw=true',
+						description: 'UI5Con'
 					},
 					{
-						src: 'https://www.w3schools.com/howto/img_lights_wide.jpg',
-						description: 'Lights'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic3.JPG?raw=true',
+						description: 'UI5Con'
 					},
 					{
-						src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
-						description: 'Mountains'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic1.JPG?raw=true',
+						description: 'UI5Con'
 					},
 					{
-						src: 'https://www.w3schools.com/howto/img_lights_wide.jpg',
-						description: 'Lights'
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic2.JPG?raw=true',
+						description: 'UI5Con'
+					},
+					{
+						src:
+							'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic3.JPG?raw=true',
+						description: 'UI5Con'
 					}
 				]
 			});
