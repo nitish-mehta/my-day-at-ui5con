@@ -1,6 +1,0 @@
-/*!
- * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
- * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
- */
-sap.ui.define(["jquery.sap.global","sap/base/encoding/encodeXML","sap/base/encoding/encodeJS","sap/base/encoding/encodeURL","sap/base/encoding/encodeURLParameters","sap/base/encoding/encodeCSS","sap/base/util/URLWhiteList","sap/base/encoding/sanitizeHTML"],function(e,a,s,n,i,t,r,c){"use strict";e.sap.encodeHTML=a;e.sap.encodeXML=a;e.sap.escapeHTML=a;e.sap.encodeJS=s;e.sap.escapeJS=s;e.sap.encodeURL=n;e.sap.encodeURLParameters=i;e.sap.encodeCSS=t;e.sap.clearUrlWhitelist=r.clear;e.sap.addUrlWhitelist=r.add;e.sap.removeUrlWhitelist=function(e){r.delete(r.entries()[e])};e.sap.getUrlWhitelist=r.entries;e.sap.validateUrl=r.validate;Object.defineProperty(e.sap,"_sanitizeHTML",{get:function(){var e=sap.ui.requireSync("sap/base/encoding/sanitizeHTML");Object.defineProperty(this,"_sanitizeHTML",{value:e,writable:true,configurable:false});return e},configurable:true});return e});

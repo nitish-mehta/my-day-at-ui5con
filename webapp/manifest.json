@@ -8,7 +8,8 @@
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {},
-				"ui5lab.wl.space": {}
+				"ui5lab.wl.space": {},
+				"ui5lab.lightbox": {}
 			}
 		},
 		"rootView": {

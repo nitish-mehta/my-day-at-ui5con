@@ -1,6 +1,0 @@
-/*!
- * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
- * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
- */
-sap.ui.define(["jquery.sap.global","sap/ui/MobileSupport","sap/ui/Device"],function(e,s,o){"use strict";function t(e,s){var o=Object.getOwnPropertyDescriptor(e,s);return o&&o.value}(function(){e.os=e.extend({os:o.os.name,version:o.os.versionStr,fVersion:o.os.version},t(e,"os"));e.os[o.os.name]=true;e.support=e.support||{};e.support.retina=window.devicePixelRatio>=2;e.device=e.extend({},t(e,"device"));e.device.is=e.extend({standalone:window.navigator.standalone,landscape:o.orientation.landscape,portrait:o.orientation.portrait,iphone:o.os.ios&&o.system.phone,ipad:o.os.ios&&o.system.tablet,android_phone:o.system.phone&&o.os.android,android_tablet:o.system.tablet&&o.os.android,tablet:o.system.tablet,phone:o.system.phone,desktop:o.system.desktop},e.device.is)})();e.sap.simulateMobileOnDesktop=s.simulateMobileOnDesktop;e.sap.initMobile=s.initMobile;e.sap.setIcons=s.setIcons;e.sap.setMobileWebAppCapable=s.setMobileWebAppCapable;return e});
