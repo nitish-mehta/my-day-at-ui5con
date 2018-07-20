@@ -12,15 +12,7 @@
 								icon="sap-icon://picture">
 								<space:Intro title="Insert Something Awesome Here" text="Ummm ............ Like some photos, maybe ?"/>
 
-								<lightbox:LightBox images="[{src: 'https://www.w3schools.com/howto/img_nature_wide.jpg', description: 'Nature'}, 
-						 		{src: 'https://www.w3schools.com/howto/img_snow_wide.jpg', description: 'Snow'},
-						 		{src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg', description: 'Mountains'},
-						 		{src: 'https://www.w3schools.com/howto/img_lights_wide.jpg', description: 'Lights'},
-						 		{src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg', description: 'Mountains'},
-						 		{src: 'https://www.w3schools.com/howto/img_lights_wide.jpg', description: 'Lights'},
-						 		{src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg', description: 'Mountains'},
-						 		{src: 'https://www.w3schools.com/howto/img_lights_wide.jpg', description: 'Lights'}]
-								" width="100%" height="200px">
+								<lightbox:LightBox images="{viewModel>/images}" width="100%" height="200px">
 									
 								</lightbox:LightBox>
 								
