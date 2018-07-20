@@ -45,17 +45,17 @@ sap.ui.require.preload({
 							},
 							{
 								src:
-									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic2.JPG?raw=true',
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/7.JPG?raw=true',
 								description: 'UI5Con'
 							},
 							{
 								src:
-									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic3.JPG?raw=true',
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/8.JPG?raw=true',
 								description: 'UI5Con'
 							},
 							{
 								src:
-									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/1.JPG?raw=true',
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/9.JPG?raw=true',
 								description: 'UI5Con'
 							}
 						]
