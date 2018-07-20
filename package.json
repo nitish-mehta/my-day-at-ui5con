@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@openui5/sap.m": "^1.52.5",
-    "@openui5/sap.ui.core": "^1.52.5",
+    "@openui5/sap.ui.core": "^1.56.4",
     "@openui5/themelib_sap_belize": "^1.52.5"
   },
   "devDependencies": {

@@ -1,10 +1,24 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ui5con.experienceapp.controller.App" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ui5con.experienceapp.controller.App" displayBlock="true"
+	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Shell>
 		<App>
 			<Page title="{i18n>TITLE}" backgroundDesign="Solid">
 				
 				<content>
-					
+					<IconTabBar
+						class="sapUiResponsiveContentPadding">
+						<items>
+							<IconTabFilter
+								icon="sap-icon://picture">
+								<Text text="Insert something Awesome here" />
+							</IconTabFilter>
+							<IconTabFilter
+								icon="sap-icon://jam">
+								<html:iframe allowfullscreen="" id="wallsio-iframe" src="https://walls.io/k62ey?nobackground=1&amp;show_header=0" style="border:0;height:800px;width:100%"></html:iframe>
+							</IconTabFilter>
+							
+						</items>
+					</IconTabBar>
 				</content>
 			
 			</Page>
