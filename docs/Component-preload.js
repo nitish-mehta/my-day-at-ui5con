@@ -30,23 +30,32 @@ sap.ui.require.preload({
 							},
 							{
 								src:
-									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic4.JPG?raw=true',
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic1.JPG?raw=true',
 								description: 'UI5Con'
 							},
 							{
-								src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
+								src:
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic2.JPG?raw=true',
 								description: 'UI5Con'
 							},
 							{
-								src: 'https://www.w3schools.com/howto/img_lights_wide.jpg',
+								src:
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic3.JPG?raw=true',
 								description: 'UI5Con'
 							},
 							{
-								src: 'https://www.w3schools.com/howto/img_mountains_wide.jpg',
+								src:
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic1.JPG?raw=true',
 								description: 'UI5Con'
 							},
 							{
-								src: 'https://www.w3schools.com/howto/img_lights_wide.jpg',
+								src:
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic2.JPG?raw=true',
+								description: 'UI5Con'
+							},
+							{
+								src:
+									'https://github.com/nitish-mehta/my-day-at-ui5con/blob/master/docs/img/pic3.JPG?raw=true',
 								description: 'UI5Con'
 							}
 						]
