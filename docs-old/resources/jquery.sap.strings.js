@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/base/strings/endsWithIgnoreCase","sap/base/strings/startsWithIgnoreCase","sap/base/strings/charToUpperCase","sap/base/strings/camelCase","sap/base/strings/hyphen","sap/base/strings/escapeRegExp","sap/base/strings/formatMessage"],function(s,e,a,t,n,r,p,i){"use strict";s.sap.endsWith=function(s,e){if(typeof e!="string"||e==""){return false}return s.endsWith(e)};s.sap.endsWithIgnoreCase=e;s.sap.startsWith=function(s,e){if(typeof e!="string"||e==""){return false}return s.startsWith(e)};s.sap.startsWithIgnoreCase=a;s.sap.charToUpperCase=t;s.sap.padLeft=function(e,a,t){s.sap.assert(typeof a==="string"&&a,"padLeft: sPadChar must be a non-empty string");if(!e){e=""}if(a&&a.length===1){return e.padStart(t,a)}while(e.length<t){e=a+e}return e};s.sap.padRight=function(e,a,t){s.sap.assert(typeof a==="string"&&a,"padRight: sPadChar must be a non-empty string");if(!e){e=""}if(a&&a.length===1){return e.padEnd(t,a)}while(e.length<t){e=e+a}return e};s.sap.camelCase=n;s.sap.hyphen=r;s.sap.escapeRegExp=p;s.sap.formatMessage=i;return s});

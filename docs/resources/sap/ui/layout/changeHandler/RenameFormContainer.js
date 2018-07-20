@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/fl/changeHandler/Base","sap/ui/fl/Utils"],function(e,t){"use strict";var n={};var r={TARGET_ALIAS:"target"};n.applyChange=function(e,n,i){var o=i.modifier,a=e.getDefinition(),f=e.getDependentControl(r.TARGET_ALIAS,i),u=o.getAggregation(f,"title");if(a.texts&&a.texts.formText&&this._isProvided(a.texts.formText.value)){var l=a.texts.formText.value;if(typeof u==="string"){o.setProperty(f,"title",l)}else{o.setProperty(u,"text",l)}return true}else{t.log.error("Change does not contain sufficient information to be applied: ["+a.layer+"]"+a.namespace+"/"+a.fileName+"."+a.fileType)}};n.completeChangeContent=function(t,n,i){var o=t.getDefinition();if(!(n.renamedElement&&n.renamedElement.id)){throw new Error("Rename of the group cannot be executed: oSpecificChangeInfo.renamedElement attribute required")}if(!this._isProvided(n.value)){throw new Error("Rename of the group cannot be executed: oSpecificChangeInfo.value attribute required")}t.addDependentControl(n.renamedElement.id,r.TARGET_ALIAS,i);e.setTextInChange(o,"formText",n.value,"XGRP")};n._isProvided=function(e){return typeof e==="string"};return n},true);

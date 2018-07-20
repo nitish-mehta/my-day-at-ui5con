@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/events/ControlEvents","sap/base/events/PseudoEvents","sap/base/events/checkMouseEnterOrLeave","sap/base/events/isSpecialKey","sap/base/events/isMouseEventDelayed","sap/ui/events/_triggerEventHook","sap/ui/events/F6Navigation","sap/ui/events/jqueryEvent","sap/ui/events/EventSimulation"],function(e,s,a,n,t,i,v,p,o,u){"use strict";e.sap.PseudoEvents=a.events;e.sap.ControlEvents=s.events;e.sap.disableTouchToMouseHandling=u.disableTouchToMouseHandling;e.sap.touchEventMode=u.touchEventMode;e.sap.bindAnyEvent=s.bindAnyEvent;e.sap.unbindAnyEvent=s.unbindAnyEvent;e.sap.checkMouseEnterOrLeave=n;e.sap.isSpecialKey=t;e.sap.handleF6GroupNavigation=p.handleF6GroupNavigation;e.sap._FASTNAVIGATIONKEY=p.fastNavigationKey;e.sap._refreshMouseEventDelayedFlag=function(s){e.sap.isMouseEventDelayed=i.apply(this,arguments)};e.sap._refreshMouseEventDelayedFlag(navigator);e.sap._suppressTriggerEvent=v.suppress;e.sap._releaseTriggerEvent=v.release;return e});

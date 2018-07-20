@@ -1,5 +1,5 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ui5con.experienceapp.controller.App" displayBlock="true"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:space="ui5lab.wl.space">
 	<Shell>
 		<App>
 			<Page title="{i18n>TITLE}" backgroundDesign="Solid">
@@ -10,12 +10,14 @@
 						<items>
 							<IconTabFilter
 								icon="sap-icon://picture">
-								<Text text="Insert something Awesome here" />
+								<space:Intro title="Insert Something Awesome Here" text="Ummm ............ Like some photos, maybe ?"/>
+								
 							</IconTabFilter>
 							<IconTabFilter
 								icon="sap-icon://jam">
 								<html:iframe allowfullscreen="" id="wallsio-iframe" src="https://walls.io/k62ey?nobackground=1&amp;show_header=0" style="border:0;height:800px;width:100%"></html:iframe>
 							</IconTabFilter>
+
 							
 						</items>
 					</IconTabBar>

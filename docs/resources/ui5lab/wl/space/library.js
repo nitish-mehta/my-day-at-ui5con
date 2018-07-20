@@ -1,0 +1,1 @@
+sap.ui.define(["jquery.sap.global","sap/ui/core/library"],function(e,a){"use strict";sap.ui.getCore().initLibrary({name:"ui5lab.wl.space",dependencies:["sap.ui.core"],types:[],interfaces:[],controls:["ui5lab.wl.space.Intro"],elements:[],noLibraryCSS:false,version:"0.1.2"});return ui5lab.wl.space});

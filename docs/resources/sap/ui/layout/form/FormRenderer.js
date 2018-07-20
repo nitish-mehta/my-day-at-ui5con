@@ -1,0 +1,6 @@
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2018 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/ui/layout/library"],function(e,t){"use strict";var r={};r.render=function(r,a){var i=r;var l=a.getLayout();var s={role:"form"};i.write("<div");i.writeControlData(a);i.addClass("sapUiForm");i.addClass("sapUiFormLblColon");i.writeAttribute("data-sap-ui-customfastnavgroup","true");var d=t.form.FormHelper.addFormClass();if(d){i.addClass(d)}if(a.getEditable()){i.addClass("sapUiFormEdit");i.addClass("sapUiFormEdit-CTX")}else{s.readonly=""}if(a.getWidth()){i.addStyle("width",a.getWidth())}if(a.getTooltip_AsString()){i.writeAttributeEscaped("title",a.getTooltip_AsString())}i.writeClasses();i.writeStyles();var o=a.getTitle();var g=a.getToolbar();if(g){if(!a.getAriaLabelledBy()||a.getAriaLabelledBy().length==0){s["labelledby"]=g.getId()}}else if(o){var n="";if(typeof o=="string"){n=a.getId()+"--title"}else{n=o.getId()}s["labelledby"]={value:n,append:true}}i.writeAccessibilityState(a,s);i.write(">");if(l){i.renderControl(l)}else{e.sap.log.warning('Form "'+a.getId()+'" - Layout missing!',"Renderer","Form")}i.write("</div>")};return r},true);
